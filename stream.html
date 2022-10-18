@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stream video : </title>
+</head>
+<body>
+    <video id="videoPlayer" width="650" controls autoplay>
+        <source src=""  type="video/mp4" />
+    </video>
+    <script>
+        const setParams = () => {
+        const source = document.querySelector('video > source');
+        source.src = `/get-video/${location.pathname.slice(7)}`;
+        const title = document.querySelector('title');
+        title.innerText = `Stream Video: ${location.pathname.slice(7)} `;
+        }
+        setParams();
+    </script>
+</body>
+</html>
